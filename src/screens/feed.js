@@ -23,6 +23,12 @@ class Feed extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+
+    this.onPressProfile = this.onPressProfile.bind(this);
+  }
+
+  onPressProfile(user) {
+    this.props.navigation.navigate('Profile', { user: user })
   }
 
   render() {
@@ -30,11 +36,13 @@ class Feed extends Component {
       <ScrollView style={styles.container}>
         {posts.map((post) =>
           <Post
+            key={post.user}
             user={post.user}
             statusText={post.statusText}
             imageURL={post.imageURL}
             likes={post.likes}
             comments={post.comments}
+            onpress={() => this.onPressProfile(post.user)}
           />
         )}
       </ScrollView>

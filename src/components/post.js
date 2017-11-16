@@ -31,7 +31,7 @@ function Post(props) {
     <View style={styles.container}>
       <View style={{ flexDirection: 'row' }}>
         <Image style={{ width: 30, height: 30, paddingRight: 5 }} source={{ uri: 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png' }}/>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={props.onpress}>
           <Text style={{ fontSize: 15 }}>{props.user}</Text>
         </TouchableOpacity>
         <Text style={{ paddingLeft: 100 }}>{`${props.likes} people likes this post.`}</Text>

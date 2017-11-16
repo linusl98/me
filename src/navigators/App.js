@@ -8,6 +8,8 @@ import {
 import { StackNavigator } from 'react-navigation';
 
 import FeedScreen from '../screens/feed';
+import ProfileScreen from '../screens/profile';
+
 
 const routes = {
   Feed: {
@@ -16,6 +18,12 @@ const routes = {
       title: 'Feed',
     }),
   },
+  Profile: {
+    screen: ProfileScreen,
+    navigationOptions: ({ navigation }) => ({
+      title: `${navigation.state.params.user}`,
+    }),
+  }
 }
 
 const config = {
